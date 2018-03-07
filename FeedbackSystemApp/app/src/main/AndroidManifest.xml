@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".ui.LauncherActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +21,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.report.ReportActivity"
+            android:label="@string/label_reportPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.setup.SetupActivity"
+            android:label="@string/label_setupPage"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
