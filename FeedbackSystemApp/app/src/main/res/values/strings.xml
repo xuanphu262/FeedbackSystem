@@ -4,6 +4,12 @@
     <string name="label_reportPage">Feedback System Admin - Report</string>
     <string name="label_setupPage">Feedback System Admin - Location/Subject</string>
     <string name="label_scanPage">Scan QR Code</string>
-    <string name="welcome">Welcome</string>
-    <string name="feedback_invitation">Please provide your feedback</string>
+    <string name="welcome">Welcome\nChào mừng</string>
+    <string name="feedback_invitation">Please provide your feedback\nVui lòng cung cấp phản hồi của bạn</string>
+    <string name="feedback_veryPoor">Very Poor</string>
+    <string name="feedback_excellent">Excellent</string>
+    <string name="feedback_good">Good</string>
+    <string name="feedback_average">Everage</string>
+    <string name="feedback_poor">Poor</string>
+    <string name="dialog_thanks_description">Thanks for your feedback!</string>
 </resources>

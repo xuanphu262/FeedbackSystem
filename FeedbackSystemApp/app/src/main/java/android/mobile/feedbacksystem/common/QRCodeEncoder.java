@@ -1,4 +1,4 @@
-package android.mobile.feedbacksystem.ui.qr;
+package android.mobile.feedbacksystem.common;
 
 /*
  * Copyright (C) 2008 ZXing authors
@@ -33,7 +33,7 @@ import java.util.Map;
  *
  * @author dswitkin@google.com (Daniel Switkin)
  */
-final class QRCodeEncoder {
+public final class QRCodeEncoder {
 
     private static final int WHITE = 0xFFFFFFFF;
     private static final int BLACK = 0xFF000000;
@@ -41,13 +41,13 @@ final class QRCodeEncoder {
     BarcodeFormat format;
     String contents;
 
-    QRCodeEncoder(BarcodeFormat format, String content, int dimension) throws WriterException {
+    public QRCodeEncoder(BarcodeFormat format, String content, int dimension) throws WriterException {
         this.dimension = dimension;
         this.contents = content;
         this.format = format;
     }
 
-    Bitmap encodeAsBitmap() throws WriterException {
+    public Bitmap encodeAsBitmap() throws WriterException {
         String contentsToEncode = contents;
         if (contentsToEncode == null) {
             return null;
