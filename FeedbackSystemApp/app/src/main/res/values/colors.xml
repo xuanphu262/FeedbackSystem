@@ -8,6 +8,6 @@
     <color name="white">#ffffff</color>
     <color name="app_background">#F4F4F4</color>
     <color name="divider_line">#33afb4b6</color>
-    <color name="color_blueApp">#54B0E6</color>
+    <color name="blue">#54B0E6</color>
     <color name="color_green">#1fde98</color>
 </resources>
