@@ -6,7 +6,17 @@
     tools:context="android.mobile.feedbacksystem.ui.setup.SetupActivity">
 
     <TextView
+        android:id="@+id/btn_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="setup" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_blue_radius_33"
+        android:gravity="center"
+        android:padding="10dp"
+        android:paddingTop="5dp"
+        android:text="Create \n New Subject/Location"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
 </RelativeLayout>

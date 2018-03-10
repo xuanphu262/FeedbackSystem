@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="android.mobile.feedbacksystem">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +18,7 @@
         <activity
             android:name=".ui.LauncherActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +34,12 @@
             android:name=".ui.setup.SetupActivity"
             android:label="@string/label_setupPage"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.feedback.FeedbackActivity" />
+        <activity
+            android:name=".ui.qr.ScanQRCodeActivity"
+            android:label="@string/label_scanPage"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.qr.QRCodeActivity"></activity>
     </application>
 
 </manifest>

@@ -20,9 +20,9 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/bg_btn_white_radius"
             android:gravity="center"
-            android:textSize="30sp"
             android:padding="20dp"
-            android:text="REPORT" />
+            android:text="REPORT"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/btn_setup"
@@ -32,9 +32,33 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/bg_btn_white_radius"
             android:gravity="center"
-            android:textSize="30sp"
             android:padding="20dp"
-            android:text="SETUP LOCATION \nSUBJECT" />
+            android:text="SETUP LOCATION \nSUBJECT"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_btn_white_radius"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="SCAN"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/btn_showQR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_btn_white_radius"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Show QR Code"
+            android:textSize="30sp" />
     </LinearLayout>
 
 </RelativeLayout>

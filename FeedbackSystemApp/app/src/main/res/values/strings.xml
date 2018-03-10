@@ -3,4 +3,5 @@
     <string name="app_name_short">Feedback Sytem</string>
     <string name="label_reportPage">Feedback System Admin - Report</string>
     <string name="label_setupPage">Feedback System Admin - Location/Subject</string>
+    <string name="label_scanPage">Scan QR Code</string>
 </resources>

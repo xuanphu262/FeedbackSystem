@@ -1,6 +1,8 @@
 package android.mobile.feedbacksystem;
 
 import android.content.Intent;
+import android.mobile.feedbacksystem.ui.qr.QRCodeActivity;
+import android.mobile.feedbacksystem.ui.qr.ScanQRCodeActivity;
 import android.mobile.feedbacksystem.ui.report.ReportActivity;
 import android.mobile.feedbacksystem.ui.setup.SetupActivity;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.btn_report).setOnClickListener(this);
         findViewById(R.id.btn_setup).setOnClickListener(this);
+        findViewById(R.id.btn_scan).setOnClickListener(this);
+        findViewById(R.id.btn_showQR).setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +31,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_setup:
                 Intent setUpIntent = new Intent(MainActivity.this, SetupActivity.class);
                 startActivity(setUpIntent);
+                break;
+            case R.id.btn_scan:
+                Intent scanIntent = new Intent(MainActivity.this, ScanQRCodeActivity.class);
+                startActivity(scanIntent);
+                break;
+            case R.id.btn_showQR:
+                Intent showQRIntent = new Intent(MainActivity.this, QRCodeActivity.class);
+                startActivity(showQRIntent);
                 break;
         }
     }
