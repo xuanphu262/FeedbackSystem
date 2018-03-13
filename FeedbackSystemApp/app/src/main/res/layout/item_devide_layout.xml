@@ -15,7 +15,7 @@
             android:layout_height="20dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/bg_circle_green" />
+            android:background="@drawable/ic_online" />
 
         <LinearLayout
             android:layout_width="match_parent"
