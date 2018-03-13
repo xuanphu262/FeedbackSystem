@@ -71,6 +71,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/btn_feedback_good"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
                     android:src="@drawable/ic_feedback_2" />
@@ -94,6 +95,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/btn_feedback_average"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
                     android:src="@drawable/ic_feedback_3" />
@@ -118,6 +120,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/btn_feedback_poor"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
                     android:src="@drawable/ic_feedback_4" />
@@ -141,6 +144,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/btn_feedback_very_poor"
                     android:layout_width="180dp"
                     android:layout_height="180dp"
                     android:src="@drawable/ic_feedback_5" />

@@ -12,4 +12,20 @@
     <string name="feedback_average">Everage</string>
     <string name="feedback_poor">Poor</string>
     <string name="dialog_thanks_description">Thanks for your feedback!</string>
+    <string name="title_activity_admin_main">AdminMainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="fragment_location_title">Location/Subject\nInformation</string>
+    <string name="fragment_location_hintShortDescription">Short Description</string>
+    <string name="fragment_location_hintLongDescription">Long Description</string>
+    <string name="feedback_reason">Please share with us the reasons for your selection</string>
+    <string name="feedback_wet_floor">Wet Floor</string>
+    <string name="feedback_bin_full">Bin Full</string>
+    <string name="feedback_noToiletPaper">No Toilet Paper</string>
+    <string name="feedback_dirtyToiletBowl">Dirty Toilet Bowl</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
 </resources>

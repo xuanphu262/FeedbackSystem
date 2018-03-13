@@ -3,6 +3,7 @@ package android.mobile.feedbacksystem.ui;
 import android.content.Intent;
 import android.mobile.feedbacksystem.MainActivity;
 import android.mobile.feedbacksystem.R;
+import android.mobile.feedbacksystem.ui.admin.AdminMainActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ public class LauncherActivity extends AppCompatActivity {
     }
 
     private void launchHomePage() {
-        Intent intent = new Intent(LauncherActivity.this, MainActivity.class);
+        Intent intent = new Intent(LauncherActivity.this, AdminMainActivity.class);
         startActivity(intent);
         finish();
     }
