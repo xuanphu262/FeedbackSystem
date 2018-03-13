@@ -35,7 +35,7 @@ public class DataHelper {
 
     }
 
-    private static List<FeedbackModel> loadFeedback (Context context) throws IOException {
+    private static List<FeedbackModel> loadFeedback(Context context) throws IOException {
         InputStream feedbackStream = context.getAssets().open("feedbacks.json");
         return readFeedbackStream(feedbackStream);
     }
@@ -214,8 +214,8 @@ public class DataHelper {
     }
 
     public static boolean updateLocation(LocationModel location) {
-        for (int i = 0; i < locationList.size(); i ++) {
-            if (locationList.get(i).getId().equals(location.getId())){
+        for (int i = 0; i < locationList.size(); i++) {
+            if (locationList.get(i).getId().equals(location.getId())) {
                 locationList.remove(i);
                 locationList.add(i, location);
                 return true;
@@ -225,8 +225,8 @@ public class DataHelper {
     }
 
     public static boolean updateDevice(DeviceModel device) {
-        for (int i = 0; i < locationList.size(); i ++) {
-            if (deviceList.get(i).getId().equals(device.getId())){
+        for (int i = 0; i < locationList.size(); i++) {
+            if (deviceList.get(i).getId().equals(device.getId())) {
                 deviceList.remove(i);
                 deviceList.add(i, device);
                 return true;
@@ -239,14 +239,16 @@ public class DataHelper {
 
         List<FeedbackModel> feedbacks = null;
         long time = 0;
-        for (int i = 0; i < feedbackList.size(); i ++) {
+        for (int i = 0; i < feedbackList.size(); i++) {
             time = feedbackList.get(i).getCreatedDate().getTime();
-            if( time >= startDate.getTime() && time <= endDate.getTime() &&  feedbackList.get(i).getLocationId().equals(locationId) ){
+            if (time >= startDate.getTime() && time <= endDate.getTime() && feedbackList.get(i).getLocationId().equals(locationId)) {
                 feedbacks.add(feedbackList.get(i));
             }
         }
         return feedbacks;
     }
 
-
+    public static LocationModel getLocation(String locationId) {
+        return locationList.get(0);
+    }
 }
