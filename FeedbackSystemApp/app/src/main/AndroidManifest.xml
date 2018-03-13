@@ -67,7 +67,10 @@
             android:name=".ui.admin.device.EditDeviceActivity"
             android:label="@string/edit_device"
             android:parentActivityName=".ui.admin.AdminMainActivity" />
-        <activity android:name=".ui.admin.location.EditLocationActivity" />
+        <activity
+            android:name=".ui.admin.location.EditLocationActivity"
+            android:label="@string/edit_location"
+            android:parentActivityName=".ui.admin.AdminMainActivity" />
     </application>
 
 </manifest>

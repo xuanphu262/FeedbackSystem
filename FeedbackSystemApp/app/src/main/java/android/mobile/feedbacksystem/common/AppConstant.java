@@ -11,4 +11,5 @@ public class AppConstant {
     public static final String RESULT_LOCATION_ID = "location_id";
     public static final String RESULT_LOCATION_NAME = "location_name";
     public static final String KEY_DEVICE = "device_model";
+    public static final String KEY_LOCATION = "location_model";
 }

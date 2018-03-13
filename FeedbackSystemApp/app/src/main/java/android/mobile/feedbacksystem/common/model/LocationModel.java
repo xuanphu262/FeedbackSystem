@@ -1,5 +1,6 @@
 package android.mobile.feedbacksystem.common.model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -7,7 +8,7 @@ import java.util.Date;
  * Created by hoainguyen on 3/11/18.
  */
 
-public class LocationModel {
+public class LocationModel implements Serializable {
     String id;
     String shortDescription;
     String longDescription;
@@ -34,5 +35,13 @@ public class LocationModel {
 
     public Date getCreatedDate() {
         return createdDate;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 }

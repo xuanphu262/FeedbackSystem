@@ -1,6 +1,9 @@
 package android.mobile.feedbacksystem.ui.admin.location;
 
+import android.content.Intent;
 import android.mobile.feedbacksystem.R;
+import android.mobile.feedbacksystem.common.AppConstant;
+import android.mobile.feedbacksystem.ui.admin.event.EditLocationEvent;
 import android.mobile.feedbacksystem.ui.admin.event.NavigateEvent;
 import android.mobile.feedbacksystem.ui.admin.event.UpdateEvent;
 import android.os.Bundle;
@@ -52,6 +55,15 @@ public class LocationListFragment extends SectionCollectionFragment {
             if (mAdapter != null)
                 mAdapter.onStartLoadData();
         }
+    }
+
+    @Subscribe
+    public void onEditEvent(EditLocationEvent event) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(AppConstant.KEY_LOCATION, event.getLocation());
+        Intent addDeviceIntent = new Intent(getActivity(), EditLocationActivity.class);
+        addDeviceIntent.putExtras(bundle);
+        startActivity(addDeviceIntent);
     }
 
     @Override
