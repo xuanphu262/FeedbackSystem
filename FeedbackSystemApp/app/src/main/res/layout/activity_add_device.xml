@@ -14,22 +14,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="@string/device_name"
+            android:text="@string/device_information"
             android:textColor="@color/black"
             android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/edt_deviceName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_edittext"
-            android:hint="@string/hint_enter_device_name"
-            android:maxLines="1"
-            android:padding="12dp"
-            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,6 +41,7 @@
             android:padding="12dp"
             android:textSize="14sp" />
 
+
         <TextView
             android:id="@+id/btn_scanQrCode"
             android:layout_width="100dp"
@@ -66,6 +54,30 @@
             android:text="@string/scan_qr_code"
             android:textColor="@color/white"
             android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/device_name"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edt_deviceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="@string/hint_enter_device_name"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="14sp" />
+
 
         <TextView
             android:layout_width="wrap_content"

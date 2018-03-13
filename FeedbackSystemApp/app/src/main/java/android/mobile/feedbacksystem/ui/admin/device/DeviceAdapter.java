@@ -18,7 +18,7 @@ public class DeviceAdapter extends DataSectionRVAdapter {
     public void onStartLoadData() {
         List<RenderItem> itemList = new ArrayList<>();
 
-        for (DeviceModel deviceModel : DataHelper.deviceModelList) {
+        for (DeviceModel deviceModel : DataHelper.deviceList) {
             itemList.add(new DeviceItemView(deviceModel));
         }
         refresh(itemList);
