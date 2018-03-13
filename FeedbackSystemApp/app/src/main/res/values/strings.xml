@@ -12,7 +12,7 @@
     <string name="feedback_average">Everage</string>
     <string name="feedback_poor">Poor</string>
     <string name="dialog_thanks_description">Thanks for your feedback!</string>
-    <string name="title_activity_admin_main">AdminMainActivity</string>
+    <string name="title_activity_admin_main">Feedback Admin System</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
