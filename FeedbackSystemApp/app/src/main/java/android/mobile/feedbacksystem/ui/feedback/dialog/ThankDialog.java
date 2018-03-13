@@ -27,7 +27,7 @@ public class ThankDialog extends BaseDialogFragment {
             public void run() {
                 dismiss();
             }
-        }, 5000);
+        }, 3000);
         return rootView;
     }
 }

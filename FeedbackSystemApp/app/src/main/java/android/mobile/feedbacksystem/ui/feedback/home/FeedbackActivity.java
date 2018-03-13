@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.mobile.feedbacksystem.R;
 import android.mobile.feedbacksystem.common.AppUtils;
 import android.mobile.feedbacksystem.common.QRCodeEncoder;
+import android.mobile.feedbacksystem.ui.feedback.dialog.QRCodeDialog;
 import android.mobile.feedbacksystem.ui.feedback.dialog.ThankDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.btn_feedback_very_poor).setOnClickListener(this);
 
         ImageView imgQRcode = (ImageView) findViewById(R.id.img_QRCode);
+        imgQRcode.setOnClickListener(this);
         String qrContent = AppUtils.getDeviceId(getApplicationContext());
         try {
             QRCodeEncoder qrEncoder = new QRCodeEncoder(BarcodeFormat.QR_CODE, qrContent, 200);
@@ -51,6 +53,10 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btn_feedback_very_poor:
                 Intent submitIntent = new Intent(FeedbackActivity.this, SubmitReasonActivity.class);
                 startActivityForResult(submitIntent, SUBMIT_CODE);
+                break;
+            case R.id.img_QRCode:
+                QRCodeDialog qrCodeDialog = new QRCodeDialog();
+                qrCodeDialog.show(getSupportFragmentManager(), " QRCodeDialog");
                 break;
         }
     }
