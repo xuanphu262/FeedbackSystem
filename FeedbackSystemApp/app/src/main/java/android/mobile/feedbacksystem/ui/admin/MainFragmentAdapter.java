@@ -1,8 +1,5 @@
 package android.mobile.feedbacksystem.ui.admin;
 
-import android.mobile.feedbacksystem.ui.admin.device.DeviceListFragment;
-import android.mobile.feedbacksystem.ui.admin.location.LocationListFragment;
-import android.mobile.feedbacksystem.ui.admin.report.ReportFragment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,17 +13,11 @@ import java.util.List;
  */
 
 public class MainFragmentAdapter extends FragmentPagerAdapter {
-    DeviceListFragment mDeviceFragment;
-    LocationListFragment mLocationFragment;
-    ReportFragment mReportFragment;
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 
     public MainFragmentAdapter(FragmentManager fm) {
         super(fm);
-        mDeviceFragment = new DeviceListFragment();
-        mLocationFragment = new LocationListFragment();
-        mReportFragment = new ReportFragment();
     }
 
     @Override

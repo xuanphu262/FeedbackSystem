@@ -6,7 +6,7 @@ import android.mobile.feedbacksystem.common.AppConstant;
 import android.mobile.feedbacksystem.common.DataHelper;
 import android.mobile.feedbacksystem.common.model.DeviceModel;
 import android.mobile.feedbacksystem.ui.admin.event.UpdateEvent;
-import android.mobile.feedbacksystem.ui.qr.ScanQRCodeActivity;
+import android.mobile.feedbacksystem.ui.admin.qr.ScanQRCodeActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;

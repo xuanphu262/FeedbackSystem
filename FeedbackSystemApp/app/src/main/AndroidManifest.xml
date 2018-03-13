@@ -14,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".ui.LauncherActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -26,24 +25,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.report.ReportActivity"
+            android:name=".ui.admin.result.ReportResultActivity"
             android:label="@string/label_reportPage"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.setup.SetupActivity"
-            android:label="@string/label_setupPage"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.admin.AdminMainActivity" />
         <activity
             android:name=".ui.feedback.home.FeedbackActivity"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
         <activity
-            android:name=".ui.qr.ScanQRCodeActivity"
+            android:name=".ui.admin.qr.ScanQRCodeActivity"
             android:label="@string/label_scanPage"
             android:parentActivityName=".ui.admin.AddDeviceActivity" />
         <activity

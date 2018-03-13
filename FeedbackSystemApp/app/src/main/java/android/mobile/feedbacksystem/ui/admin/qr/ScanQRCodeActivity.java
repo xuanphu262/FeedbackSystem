@@ -1,4 +1,4 @@
-package android.mobile.feedbacksystem.ui.qr;
+package android.mobile.feedbacksystem.ui.admin.qr;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;

@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Feedback System Admin</string>
     <string name="app_name_short">Feedback Sytem</string>
-    <string name="label_reportPage">Feedback System Admin - Report</string>
-    <string name="label_setupPage">Feedback System Admin - Location/Subject</string>
+    <string name="label_reportPage">Report Result</string>
     <string name="label_scanPage">Scan QR Code</string>
     <string name="welcome">Welcome\nChào mừng</string>
     <string name="feedback_invitation">Please provide your feedback\nVui lòng cung cấp phản hồi của bạn</string>

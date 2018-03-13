@@ -1,7 +1,12 @@
 package android.mobile.feedbacksystem.ui.admin.report;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.mobile.feedbacksystem.R;
+import android.mobile.feedbacksystem.common.AppConstant;
+import android.mobile.feedbacksystem.ui.admin.SelectLocationActivity;
+import android.mobile.feedbacksystem.ui.admin.result.ReportResultActivity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -27,6 +33,7 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
     final SimpleDateFormat DateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
     private Calendar mStartDay = Calendar.getInstance();
     private Calendar mEndDay = Calendar.getInstance();
+    private String mLocationID;
 
     @Nullable
     @Override
@@ -65,11 +72,28 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
                 });
                 break;
             case R.id.btn_report:
-                //TODO check input and go to ReportResultActivity
+                if (mTvStartDay.getText().toString().isEmpty()
+                        || mTvEndDay.getText().toString().isEmpty()
+                        || mTvLocation.getText().toString().isEmpty()) {
+                    Toast.makeText(getContext(), "Input data error!", Toast.LENGTH_SHORT).show();
+                }
+
+                Intent reportResultIntent = new Intent(getContext(), ReportResultActivity.class);
+                startActivity(reportResultIntent);
                 break;
             case R.id.tv_selectLocation:
-                //TODO go to SelectLocationActivity
+                Intent selectLocation = new Intent(getContext(), SelectLocationActivity.class);
+                startActivityForResult(selectLocation, AppConstant.RQ_SELECT_LOCATION);
                 break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK && requestCode == AppConstant.RQ_SELECT_LOCATION) {
+            mTvLocation.setText(data.getCharSequenceExtra(AppConstant.RESULT_LOCATION_NAME));
+            mLocationID = data.getCharSequenceExtra(AppConstant.RESULT_LOCATION_ID).toString();
         }
     }
 
