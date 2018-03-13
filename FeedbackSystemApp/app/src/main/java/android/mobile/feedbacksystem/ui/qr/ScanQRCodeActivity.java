@@ -1,7 +1,9 @@
 package android.mobile.feedbacksystem.ui.qr;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.mobile.feedbacksystem.R;
+import android.mobile.feedbacksystem.common.AppConstant;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -42,13 +44,16 @@ public class ScanQRCodeActivity extends AppCompatActivity implements ZXingScanne
     @Override
     public void handleResult(Result rawResult) {
         mScannerView.resumeCameraPreview(this);
-        Toast.makeText(this, rawResult.getText(), Toast.LENGTH_SHORT).show();
+        Intent result = new Intent();
+        result.putExtra(AppConstant.RESULT_DEVICE_ID, rawResult.getText());
+        setResult(RESULT_OK, result);
+        finish();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mScannerView.stopCamera();           // Stop camera on pause
+        mScannerView.stopCamera();
     }
 
     private boolean checkPermission() {

@@ -134,4 +134,8 @@ public class DataHelper {
     public static void addLocation(LocationModel locationModel) {
         locationList.add(locationModel);
     }
+
+    public static void addDevice(DeviceModel device) {
+        deviceModelList.add(device);
+    }
 }

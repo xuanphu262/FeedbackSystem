@@ -43,4 +43,6 @@
     <string name="end_day">End Day</string>
     <string name="hint_select_end_day">Select End Day</string>
     <string name="report">Report</string>
+    <string name="device_name">Device Name</string>
+    <string name="hint_enter_device_name">Enter device name</string>
 </resources>
