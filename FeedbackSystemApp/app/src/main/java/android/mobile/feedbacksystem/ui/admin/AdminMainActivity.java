@@ -14,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import java.io.IOException;
+
 public class AdminMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -39,7 +41,11 @@ public class AdminMainActivity extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.view_tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        DataHelper.init();
+        try {
+            DataHelper.initialData(getApplicationContext());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

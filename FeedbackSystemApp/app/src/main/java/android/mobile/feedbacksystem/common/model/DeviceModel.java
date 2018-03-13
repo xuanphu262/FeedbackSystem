@@ -11,14 +11,14 @@ public class DeviceModel {
     String deviceName;
     String udid;
     Date createdDate;
-    LocationModel location;
+    String locationId;
     DeviceStatus status = DeviceStatus.ONLINE;
 
-    public DeviceModel(String id, String deviceName, String udid, Date createdDate, LocationModel location) {
+    public DeviceModel(String id, String deviceName, String udid, Date createdDate, String locationId) {
         this.id = id;
         this.udid = udid;
         this.deviceName = deviceName;
-        this.location = location;
+        this.locationId = locationId;
         this.createdDate = createdDate;
     }
 
@@ -26,8 +26,8 @@ public class DeviceModel {
         return id;
     }
 
-    public LocationModel getLocation() {
-        return location;
+    public String getLocationId() {
+        return locationId;
     };
 
     public String getDeviceName() { return deviceName; };

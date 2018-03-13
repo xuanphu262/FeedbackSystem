@@ -28,7 +28,7 @@ public class DeviceItemView extends RecyclerViewRenderItem<DeviceItemView.Device
 
     @Override
     public void bindViewHolder(DeviceViewHolder holder) {
-        holder.tvLocation.setText("Location: " + mDevice.getLocation().getShortDescription());
+        holder.tvLocation.setText("Location: " + mDevice.getLocationId());
         holder.tvDevice.setText("Device: " + mDevice.getDeviceName());
     }
 

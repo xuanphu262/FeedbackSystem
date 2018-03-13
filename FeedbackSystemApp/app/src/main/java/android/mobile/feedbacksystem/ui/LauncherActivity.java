@@ -1,5 +1,6 @@
 package android.mobile.feedbacksystem.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.mobile.feedbacksystem.MainActivity;
 import android.mobile.feedbacksystem.R;
@@ -7,6 +8,9 @@ import android.mobile.feedbacksystem.ui.admin.AdminMainActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class LauncherActivity extends AppCompatActivity {
     @Override
@@ -28,4 +32,5 @@ public class LauncherActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }

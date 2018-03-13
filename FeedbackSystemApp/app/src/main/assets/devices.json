@@ -1,0 +1,67 @@
+[{
+	"id" : "1",
+	"deviceName" : "Tablet 1",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "1"
+},{
+	"id" : "2",
+	"deviceName" : "Tablet 2",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "2"
+},{
+	"id" : "3",
+	"deviceName" : "Tablet 3",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "3"
+},{
+	"id" : "4",
+	"deviceName" : "Tablet 4",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "4"
+},{
+	"id" : "5",
+	"deviceName" : "Tablet 5",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "1"
+},{
+	"id" : "6",
+	"deviceName" : "Tablet 6",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "6"
+},{
+	"id" : "7",
+	"deviceName" : "Tablet 7",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "7"
+},{
+	"id" : "8",
+	"deviceName" : "Tablet 8",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "8"
+},{
+	"id" : "9",
+	"deviceName" : "Tablet 9",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : ""
+},{
+	"id" : "1",
+	"deviceName" : "Tablet 1",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "1"
+},{
+	"id" : "10",
+	"deviceName" : "Tablet 10",
+	"udid" : "9774d56d682e549c",
+	"createdDate" : "2018-03-13T04:51:55.022Z",
+	"locationId" : "10"
+}]
