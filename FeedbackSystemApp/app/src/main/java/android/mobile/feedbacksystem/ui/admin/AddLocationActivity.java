@@ -5,6 +5,7 @@ import android.mobile.feedbacksystem.common.DataHelper;
 import android.mobile.feedbacksystem.common.model.LocationModel;
 import android.mobile.feedbacksystem.ui.admin.event.UpdateEvent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class AddLocationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -41,9 +43,9 @@ public class AddLocationActivity extends AppCompatActivity implements View.OnCli
                     return;
                 }
 
-                String exampleId = "abcdef"; //TODO em không biết tạo id chỗ này
+                String exampleId = (DataHelper.locationList.size() + 1) +"";
                 DataHelper.addLocation(new LocationModel(exampleId, mEditShort.getText().toString(),
-                        mEditLong.getText().toString(), Calendar.getInstance().getTime()));
+                        mEditLong.getText().toString(), new Date()));
                 EventBus.getDefault().post(UpdateEvent.LOCATION);
                 finish();
                 break;
