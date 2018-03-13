@@ -15,10 +15,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by hoainguyen on 3/13/18.
- */
-
 public class DataHelper {
     public static List<LocationModel> locationList = new ArrayList<>();
     public static List<DeviceModel> deviceList = new ArrayList<>();

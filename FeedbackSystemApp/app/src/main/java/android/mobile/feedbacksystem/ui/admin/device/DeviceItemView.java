@@ -13,10 +13,6 @@ import org.greenrobot.eventbus.EventBus;
 
 import hoainguyen.lib.recyclerhelper.recycler.item.RecyclerViewRenderItem;
 
-/**
- * Created by hoainguyen on 3/12/18.
- */
-
 public class DeviceItemView extends RecyclerViewRenderItem<DeviceItemView.DeviceViewHolder> {
     private DeviceModel mDevice;
 

@@ -17,10 +17,6 @@ import org.greenrobot.eventbus.Subscribe;
 
 import hoainguyen.lib.recyclerhelper.collection.SectionCollectionFragment;
 
-/**
- * Created by hoainguyen on 3/12/18.
- */
-
 public class DeviceListFragment extends SectionCollectionFragment {
     DeviceAdapter mAdapter;
 

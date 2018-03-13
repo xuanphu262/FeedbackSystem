@@ -4,10 +4,6 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
-/**
- * Created by hoainguyen on 3/11/18.
- */
-
 public class LocationModel implements Serializable {
     String id;
     String shortDescription;

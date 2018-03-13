@@ -14,10 +14,6 @@ import android.widget.ImageView;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 
-/**
- * Created by hoainguyen on 3/13/18.
- */
-
 public class QRCodeDialog extends BaseDialogFragment {
     ImageView imgQRcode;
 

@@ -22,10 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-/**
- * Created by hoainguyen on 3/11/18.
- */
-
 public class ReportFragment extends Fragment implements View.OnClickListener {
     private TextView mTvStartDay;
     private TextView mTvEndDay;

@@ -3,10 +3,6 @@ package android.mobile.feedbacksystem.common.model;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by hoainguyen on 3/13/18.
- */
-
 public class DeviceModel implements Serializable {
     String id;
     String deviceName;

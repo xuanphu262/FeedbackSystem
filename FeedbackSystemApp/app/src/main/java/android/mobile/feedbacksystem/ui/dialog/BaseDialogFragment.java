@@ -14,10 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
-/**
- * Created by hoainguyen on 3/7/18.
- */
-
 public abstract class BaseDialogFragment extends DialogFragment {
     protected Handler mHandler;
     private boolean mIsShown = false;

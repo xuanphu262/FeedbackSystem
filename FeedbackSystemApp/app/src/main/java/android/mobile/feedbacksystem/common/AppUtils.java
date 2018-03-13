@@ -4,10 +4,6 @@ import android.content.Context;
 import android.mobile.feedbacksystem.R;
 import android.provider.Settings;
 
-/**
- * Created by hoainguyen on 3/10/18.
- */
-
 public class AppUtils {
     public static int[] FeedbackResource = {
             R.drawable.ic_feedback_1,

@@ -102,7 +102,7 @@ public class AdminMainActivity extends AppCompatActivity
             // Handle the device action
         } else if (id == R.id.nav_report) {
 
-        } else if (id == R.id.nav_subject) {
+        } else if (id == R.id.nav_sub_location) {
 
         }
 

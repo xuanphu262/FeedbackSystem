@@ -6,10 +6,6 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 
-/**
- * Created by hoainguyen on 3/10/18.
- */
-
 public class ThankDialog extends BaseDialogFragment {
     @Override
     public View initView(LayoutInflater inflater) {

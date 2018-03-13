@@ -9,10 +9,6 @@ import java.util.List;
 import hoainguyen.lib.recyclerhelper.recycler.DataSectionRVAdapter;
 import hoainguyen.lib.recyclerhelper.recycler.item.RenderItem;
 
-/**
- * Created by hoainguyen on 3/11/18.
- */
-
 public class LocationAdapter extends DataSectionRVAdapter {
     @Override
     public void onStartLoadData() {

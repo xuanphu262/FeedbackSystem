@@ -13,10 +13,6 @@ import org.greenrobot.eventbus.EventBus;
 
 import hoainguyen.lib.recyclerhelper.recycler.item.RecyclerViewRenderItem;
 
-/**
- * Created by hoainguyen on 3/11/18.
- */
-
 public class LocationViewItem extends RecyclerViewRenderItem<LocationViewItem.LocationViewHolder> {
     LocationModel mLocation;
 

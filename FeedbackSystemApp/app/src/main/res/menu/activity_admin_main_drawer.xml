@@ -9,13 +9,9 @@
             android:icon="@drawable/ic_tab_call"
             android:title="Device" />
         <item
-            android:id="@+id/nav_subject"
-            android:icon="@drawable/ic_tab_contacts"
-            android:title="Subject" />
-        <item
-            android:id="@+id/nav_location"
+            android:id="@+id/nav_sub_location"
             android:icon="@drawable/ic_location_found"
-            android:title="Location" />
+            android:title="Subject/Location" />
         <item
             android:id="@+id/nav_report"
             android:icon="@drawable/ic_tab_report"
