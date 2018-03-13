@@ -28,7 +28,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:layout_below="@+id/tv_top"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
@@ -54,6 +54,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/feedback_wet_floor"
@@ -106,6 +107,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/feedback_noToiletPaper"
+                    android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="40sp"
                     android:textStyle="bold" />
@@ -129,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
+                    android:gravity="center"
                     android:text="@string/feedback_dirtyToiletBowl"
                     android:textColor="@color/white"
                     android:textSize="40sp"
@@ -141,8 +144,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/view_container"
+        android:layout_centerHorizontal="true"
         android:layout_marginRight="20dp"
         android:orientation="horizontal">
 
@@ -153,17 +156,6 @@
             android:background="@drawable/bg_blue_radius"
             android:padding="10dp"
             android:text="@string/cancel"
-            android:textColor="@color/white"
-            android:textSize="40sp" />
-
-        <TextView
-            android:id="@+id/btn_submit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/bg_blue_radius"
-            android:padding="10dp"
-            android:text="@string/submit"
             android:textColor="@color/white"
             android:textSize="40sp" />
     </LinearLayout>

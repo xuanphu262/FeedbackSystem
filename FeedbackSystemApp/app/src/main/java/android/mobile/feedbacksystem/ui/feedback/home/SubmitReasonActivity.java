@@ -13,7 +13,6 @@ public class SubmitReasonActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_submit_reason);
 
         findViewById(R.id.btn_cancel).setOnClickListener(this);
-        findViewById(R.id.btn_submit).setOnClickListener(this);
         findViewById(R.id.btn_wetFloor).setOnClickListener(this);
         findViewById(R.id.btn_binFull).setOnClickListener(this);
         findViewById(R.id.btn_noPaper).setOnClickListener(this);

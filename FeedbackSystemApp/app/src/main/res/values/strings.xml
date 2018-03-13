@@ -22,10 +22,10 @@
     <string name="fragment_location_hintShortDescription">Short Description</string>
     <string name="fragment_location_hintLongDescription">Long Description</string>
     <string name="feedback_reason">Please share with us the reasons for your selection</string>
-    <string name="feedback_wet_floor">Wet Floor</string>
-    <string name="feedback_bin_full">Bin Full</string>
-    <string name="feedback_noToiletPaper">No Toilet Paper</string>
-    <string name="feedback_dirtyToiletBowl">Dirty Toilet Bowl</string>
+    <string name="feedback_wet_floor">Wet Floor\n</string>
+    <string name="feedback_bin_full">Bin Full\n</string>
+    <string name="feedback_noToiletPaper">No\nToilet Paper</string>
+    <string name="feedback_dirtyToiletBowl">Dirty\nToilet Bowl</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
 </resources>
