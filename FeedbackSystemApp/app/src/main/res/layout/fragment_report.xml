@@ -15,7 +15,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="@string/start_day"
+            android:text="@string/start_date"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -38,7 +38,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="@string/end_day"
+            android:text="@string/end_date"
             android:textColor="@color/black"
             android:textSize="20sp" />
 

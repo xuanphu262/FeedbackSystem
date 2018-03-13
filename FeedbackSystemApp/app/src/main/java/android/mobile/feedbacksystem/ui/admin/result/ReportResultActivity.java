@@ -23,8 +23,8 @@ public class ReportResultActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         MainFragmentAdapter adapter = new MainFragmentAdapter(getSupportFragmentManager());
-        adapter.addFrag(new ChartResultFragment(), "Chart");
-        adapter.addFrag(new ListResultFragment(), "List");
+        adapter.addFrag(new ChartResultFragment(), "Illustration");
+        adapter.addFrag(new ListResultFragment(), "Result");
         viewPager.setAdapter(adapter);
     }
 }
