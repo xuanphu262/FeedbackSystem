@@ -27,8 +27,8 @@ public class AdminMainActivity extends AppCompatActivity
     private TabLayout tabLayout;
     private int[] tabIcons = {
             R.drawable.ic_tab_call,
-            R.drawable.ic_tab_favourite,
-            R.drawable.ic_tab_contacts};
+            R.drawable.ic_location_found,
+            R.drawable.ic_tab_report};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
