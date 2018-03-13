@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.util.Calendar;
+import java.util.Date;
 
 public class AddDeviceActivity extends AppCompatActivity implements View.OnClickListener {
     EditText mEdtDeviceId;
@@ -60,10 +60,10 @@ public class AddDeviceActivity extends AppCompatActivity implements View.OnClick
                     return;
                 }
 
-                String exampleId = "abcdef"; //TODO em không biết tạo id chỗ này
-                DataHelper.addDevice(new DeviceModel(exampleId, mEdtDeviceName.getText().toString(),
+                String newDeviceId = DataHelper.getNewDeviceID();
+                DataHelper.addDevice(new DeviceModel(newDeviceId, mEdtDeviceName.getText().toString(),
                         mEdtDeviceId.getText().toString(),
-                        Calendar.getInstance().getTime(), mTvLocation.getText().toString()));
+                        new Date(), mTvLocation.getText().toString()));
                 EventBus.getDefault().post(UpdateEvent.DEVICE);
                 finish();
                 break;

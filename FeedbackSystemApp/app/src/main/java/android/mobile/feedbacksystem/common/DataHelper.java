@@ -23,12 +23,17 @@ public class DataHelper {
     public static List<DeviceModel> deviceModelList = new ArrayList<>();
 
     public static void initialData(Context context) throws IOException {
-        InputStream locationStream = context.getAssets().open("locations.json");
 
-        locationList = readLocationsStream(locationStream);
+        locationList = loadLocation(context);
         for (LocationModel locationModel : locationList) {
             deviceModelList.add(new DeviceModel("1", "Tablet " + locationModel.getId(), "9774d56d682e549c", new Date(), locationModel.getId()));
         }
+    }
+
+
+    public static List<LocationModel> loadLocation(Context context) throws IOException {
+        InputStream locationStream = context.getAssets().open("locations.json");
+        return readLocationsStream(locationStream);
     }
 
 
@@ -137,5 +142,13 @@ public class DataHelper {
 
     public static void addDevice(DeviceModel device) {
         deviceModelList.add(device);
+    }
+
+    public static String getNewLocationId() {
+        return (DataHelper.locationList.size() + 1) + "";
+    }
+
+    public static String getNewDeviceID() {
+        return (DataHelper.deviceModelList.size() + 1) + "";
     }
 }

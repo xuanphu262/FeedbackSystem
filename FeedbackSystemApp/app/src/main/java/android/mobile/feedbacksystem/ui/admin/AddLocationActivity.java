@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 
-import java.util.Calendar;
+import java.util.Date;
 
 public class AddLocationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -41,9 +41,9 @@ public class AddLocationActivity extends AppCompatActivity implements View.OnCli
                     return;
                 }
 
-                String exampleId = "abcdef"; //TODO em không biết tạo id chỗ này
-                DataHelper.addLocation(new LocationModel(exampleId, mEditShort.getText().toString(),
-                        mEditLong.getText().toString(), Calendar.getInstance().getTime()));
+                String newLocationID = DataHelper.getNewLocationId();
+                DataHelper.addLocation(new LocationModel(newLocationID, mEditShort.getText().toString(),
+                        mEditLong.getText().toString(), new Date()));
                 EventBus.getDefault().post(UpdateEvent.LOCATION);
                 finish();
                 break;

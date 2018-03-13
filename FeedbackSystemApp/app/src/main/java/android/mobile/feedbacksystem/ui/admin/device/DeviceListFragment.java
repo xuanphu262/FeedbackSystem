@@ -2,11 +2,15 @@ package android.mobile.feedbacksystem.ui.admin.device;
 
 import android.mobile.feedbacksystem.R;
 import android.mobile.feedbacksystem.ui.admin.event.NavigateEvent;
+import android.mobile.feedbacksystem.ui.admin.event.UpdateEvent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import hoainguyen.lib.recyclerhelper.collection.SectionCollectionFragment;
 
@@ -15,6 +19,13 @@ import hoainguyen.lib.recyclerhelper.collection.SectionCollectionFragment;
  */
 
 public class DeviceListFragment extends SectionCollectionFragment {
+    DeviceAdapter mAdapter;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
 
     @Override
     public View getRootLayout(LayoutInflater inflater, ViewGroup container) {
@@ -28,8 +39,23 @@ public class DeviceListFragment extends SectionCollectionFragment {
         return rootView;
     }
 
+    @Subscribe
+    public void onGetEvent(UpdateEvent event) {
+        if (event == UpdateEvent.DEVICE) {
+            if (mAdapter != null)
+                mAdapter.onStartLoadData();
+        }
+    }
+
     @Override
     protected void onMakeAdapters() {
-        mRecyclerView.appendAdapter(new DeviceAdapter());
+        mAdapter = new DeviceAdapter();
+        mRecyclerView.appendAdapter(mAdapter);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }
