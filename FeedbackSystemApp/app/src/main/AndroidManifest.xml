@@ -21,6 +21,7 @@
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,10 +33,11 @@
             android:name=".ui.feedback.home.FeedbackActivity"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".ui.admin.qr.ScanQRCodeActivity"
@@ -61,6 +63,11 @@
             android:name=".ui.admin.SelectLocationActivity"
             android:label="@string/select_location"
             android:parentActivityName=".ui.admin.AddLocationActivity" />
+        <activity
+            android:name=".ui.admin.device.EditDeviceActivity"
+            android:label="@string/edit_device"
+            android:parentActivityName=".ui.admin.AdminMainActivity" />
+        <activity android:name=".ui.admin.location.EditLocationActivity" />
     </application>
 
 </manifest>

@@ -44,4 +44,6 @@
     <string name="report">Report</string>
     <string name="device_name">Device Name</string>
     <string name="hint_enter_device_name">Enter device name</string>
+    <string name="edit_device">Edit Device</string>
+    <string name="update">Update</string>
 </resources>

@@ -45,14 +45,22 @@
         </LinearLayout>
 
 
-        <ImageView
+        <RelativeLayout
             android:id="@+id/btn_edit"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="20dp"
-            android:src="@drawable/ic_edit" />
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_edit" />
+        </RelativeLayout>
+
     </RelativeLayout>
 </RelativeLayout>

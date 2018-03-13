@@ -1,6 +1,9 @@
 package android.mobile.feedbacksystem.ui.admin.device;
 
+import android.content.Intent;
 import android.mobile.feedbacksystem.R;
+import android.mobile.feedbacksystem.common.AppConstant;
+import android.mobile.feedbacksystem.ui.admin.event.EditDeviceEvent;
 import android.mobile.feedbacksystem.ui.admin.event.NavigateEvent;
 import android.mobile.feedbacksystem.ui.admin.event.UpdateEvent;
 import android.os.Bundle;
@@ -45,6 +48,15 @@ public class DeviceListFragment extends SectionCollectionFragment {
             if (mAdapter != null)
                 mAdapter.onStartLoadData();
         }
+    }
+
+    @Subscribe
+    public void onEditEvent(EditDeviceEvent event) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(AppConstant.KEY_DEVICE, event.getDevice());
+        Intent addDeviceIntent = new Intent(getActivity(), EditDeviceActivity.class);
+        addDeviceIntent.putExtras(bundle);
+        startActivity(addDeviceIntent);
     }
 
     @Override

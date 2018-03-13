@@ -1,12 +1,13 @@
 package android.mobile.feedbacksystem.common.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by hoainguyen on 3/13/18.
  */
 
-public class DeviceModel {
+public class DeviceModel implements Serializable {
     String id;
     String deviceName;
     String uuid;
@@ -30,10 +31,23 @@ public class DeviceModel {
         return locationId;
     }
 
-    public String getDeviceName() { return deviceName; }
+    public String getDeviceName() {
+        return deviceName;
+    }
 
-    public String getUuid() { return uuid; }
+    public String getUuid() {
+        return uuid;
+    }
 
-    public DeviceStatus getDeviceStatus () { return status; }
+    public DeviceStatus getDeviceStatus() {
+        return status;
+    }
 
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    public void setLocationId(String locationId) {
+        this.locationId = locationId;
+    }
 }
