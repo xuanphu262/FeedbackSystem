@@ -9,14 +9,14 @@ import java.util.Date;
 public class DeviceModel {
     String id;
     String deviceName;
-    String udid;
+    String uuid;
     Date createdDate;
     String locationId;
     DeviceStatus status = DeviceStatus.ONLINE;
 
-    public DeviceModel(String id, String deviceName, String udid, Date createdDate, String locationId) {
+    public DeviceModel(String id, String deviceName, String uuid, Date createdDate, String locationId) {
         this.id = id;
-        this.udid = udid;
+        this.uuid = uuid;
         this.deviceName = deviceName;
         this.locationId = locationId;
         this.createdDate = createdDate;
@@ -28,12 +28,12 @@ public class DeviceModel {
 
     public String getLocationId() {
         return locationId;
-    };
+    }
 
-    public String getDeviceName() { return deviceName; };
+    public String getDeviceName() { return deviceName; }
 
-    public String getUdid() { return udid; };
+    public String getUuid() { return uuid; }
 
-    public DeviceStatus getDeviceStatus () { return status; };
+    public DeviceStatus getDeviceStatus () { return status; }
 
 }

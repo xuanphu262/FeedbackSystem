@@ -1,9 +1,10 @@
 package android.mobile.feedbacksystem.ui.admin;
 
+import android.content.Intent;
 import android.mobile.feedbacksystem.R;
 import android.mobile.feedbacksystem.common.DataHelper;
-import android.mobile.feedbacksystem.common.model.DeviceStatus;
 import android.mobile.feedbacksystem.ui.admin.device.DeviceListFragment;
+import android.mobile.feedbacksystem.ui.admin.event.NavigateEvent;
 import android.mobile.feedbacksystem.ui.admin.location.LocationListFragment;
 import android.mobile.feedbacksystem.ui.admin.report.ReportFragment;
 import android.os.Bundle;
@@ -15,9 +16,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.io.IOException;
 
@@ -29,6 +31,26 @@ public class AdminMainActivity extends AppCompatActivity
             R.drawable.ic_tab_call,
             R.drawable.ic_location_found,
             R.drawable.ic_tab_report};
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Subscribe
+    public void onGetEvent(NavigateEvent event) {
+        switch (event) {
+            case ADD_DEVICE:
+                Intent addDeviceIntent = new Intent(AdminMainActivity.this, AddDeviceActivity.class);
+                startActivity(addDeviceIntent);
+                break;
+            case ADD_LOCATION:
+                Intent addLocationIntent = new Intent(AdminMainActivity.this, AddLocationActivity.class);
+                startActivity(addLocationIntent);
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,5 +123,11 @@ public class AdminMainActivity extends AppCompatActivity
         adapter.addFrag(new LocationListFragment(), "Location");
         adapter.addFrag(new ReportFragment(), "Report");
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 }

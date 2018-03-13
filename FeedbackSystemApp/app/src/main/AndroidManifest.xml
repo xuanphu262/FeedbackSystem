@@ -20,10 +20,11 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/FullscreenTheme">
-             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.report.ReportActivity"
@@ -37,15 +38,16 @@
             android:name=".ui.feedback.home.FeedbackActivity"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".ui.qr.ScanQRCodeActivity"
             android:label="@string/label_scanPage"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ui.admin.AddDeviceActivity" />
         <activity
             android:name=".ui.admin.AdminMainActivity"
             android:label="@string/title_activity_admin_main"
@@ -54,6 +56,18 @@
             android:name=".ui.feedback.home.SubmitReasonActivity"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".ui.admin.AddDeviceActivity"
+            android:label="@string/add_device"
+            android:parentActivityName=".ui.admin.AdminMainActivity" />
+        <activity
+            android:name=".ui.admin.AddLocationActivity"
+            android:label="@string/add_location"
+            android:parentActivityName=".ui.admin.AdminMainActivity" />
+        <activity
+            android:name=".ui.admin.SelectLocationActivity"
+            android:label="@string/select_location"
+            android:parentActivityName=".ui.admin.AddLocationActivity" />
     </application>
 
 </manifest>

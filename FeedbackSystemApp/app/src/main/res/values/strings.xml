@@ -28,4 +28,14 @@
     <string name="feedback_dirtyToiletBowl">Dirty\nToilet Bowl</string>
     <string name="cancel">Cancel</string>
     <string name="submit">Submit</string>
+    <string name="device_information">Device Information</string>
+    <string name="add_device">Add Device</string>
+    <string name="device_id">Device ID</string>
+    <string name="location_subject">Location/Subject</string>
+    <string name="hint_enter_id">Enter device ID</string>
+    <string name="hint_enter_location">Enter Location</string>
+    <string name="create">Create</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="add_location">Add Location/Subject</string>
+    <string name="select_location">Select Location/Subject</string>
 </resources>

@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +16,6 @@ import java.util.List;
  */
 
 public class MainFragmentAdapter extends FragmentPagerAdapter {
-
-
-    static final int TAB_COUNT = 3;
     DeviceListFragment mDeviceFragment;
     LocationListFragment mLocationFragment;
     ReportFragment mReportFragment;

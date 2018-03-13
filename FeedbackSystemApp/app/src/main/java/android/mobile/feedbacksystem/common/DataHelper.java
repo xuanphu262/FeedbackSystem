@@ -1,7 +1,6 @@
 package android.mobile.feedbacksystem.common;
 
 import android.content.Context;
-import android.location.Location;
 import android.mobile.feedbacksystem.common.model.DeviceModel;
 import android.mobile.feedbacksystem.common.model.LocationModel;
 import android.util.JsonReader;
@@ -9,7 +8,6 @@ import android.util.JsonReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,26 +23,11 @@ public class DataHelper {
     public static List<DeviceModel> deviceModelList = new ArrayList<>();
 
     public static void initialData(Context context) throws IOException {
-
-        // initial data for Location
-//        locationList.add(new LocationModel("1", "L1T1", "Toilet", new Date()));
-//        locationList.add(new LocationModel("2", "L1T2", "Toilet", new Date()));
-//        locationList.add(new LocationModel("3", "L1T3", "Toilet", new Date()));
-//        locationList.add(new LocationModel("4", "L1T4", "Toilet", new Date()));
-//        locationList.add(new LocationModel("5", "L2T1", "Toilet", new Date()));
-//        locationList.add(new LocationModel("6", "L2T2", "Toilet", new Date()));
-//        locationList.add(new LocationModel("7", "L3C1", "Counter", new Date()));
-//        locationList.add(new LocationModel("8", "L3C2", "Counter", new Date()));
-//        locationList.add(new LocationModel("9", "L4C1", "Counter", new Date()));
-//        locationList.add(new LocationModel("10", "L4C2", "Counter", new Date()));
-//
-
-
         InputStream locationStream = context.getAssets().open("locations.json");
 
         locationList = readLocationsStream(locationStream);
-        for(LocationModel locationModel: locationList) {
-            deviceModelList.add(new DeviceModel("1", "Tablet " + locationModel.getId() , "9774d56d682e549c", new Date(), locationModel.getId()));
+        for (LocationModel locationModel : locationList) {
+            deviceModelList.add(new DeviceModel("1", "Tablet " + locationModel.getId(), "9774d56d682e549c", new Date(), locationModel.getId()));
         }
     }
 
@@ -90,7 +73,8 @@ public class DataHelper {
                     createDated = dateFormat.parse(reader.nextString());
                 } catch (ParseException e) {
                     e.printStackTrace();
-                };
+                }
+                ;
             } else {
                 reader.skipValue();
             }
