@@ -6,17 +6,25 @@ import android.mobile.feedbacksystem.ui.admin.report.ReportFragment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by hoainguyen on 3/11/18.
  */
 
-public class MainFragmentAdapter extends FragmentStatePagerAdapter {
+public class MainFragmentAdapter extends FragmentPagerAdapter {
+
+
     static final int TAB_COUNT = 3;
     DeviceListFragment mDeviceFragment;
     LocationListFragment mLocationFragment;
     ReportFragment mReportFragment;
+    private final List<Fragment> mFragmentList = new ArrayList<>();
+    private final List<String> mFragmentTitleList = new ArrayList<>();
 
     public MainFragmentAdapter(FragmentManager fm) {
         super(fm);
@@ -27,35 +35,22 @@ public class MainFragmentAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                return mDeviceFragment;
-            case 1:
-                return mLocationFragment;
-            case 2:
-                return mReportFragment;
-            default:
-                return null;
-        }
+        return mFragmentList.get(position);
     }
 
     @Override
     public int getCount() {
-        return TAB_COUNT;
+        return mFragmentList.size();
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return "Device";
-            case 1:
-                return "Location";
-            case 2:
-                return "Report";
-            default:
-                return null;
-        }
+        return mFragmentTitleList.get(position);
+    }
+
+    public void addFrag(Fragment fragment, String title) {
+        mFragmentList.add(fragment);
+        mFragmentTitleList.add(title);
     }
 }

@@ -3,6 +3,9 @@ package android.mobile.feedbacksystem.ui.admin;
 import android.mobile.feedbacksystem.R;
 import android.mobile.feedbacksystem.common.DataHelper;
 import android.mobile.feedbacksystem.common.model.DeviceStatus;
+import android.mobile.feedbacksystem.ui.admin.device.DeviceListFragment;
+import android.mobile.feedbacksystem.ui.admin.location.LocationListFragment;
+import android.mobile.feedbacksystem.ui.admin.report.ReportFragment;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -12,12 +15,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.io.IOException;
 
 public class AdminMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private TabLayout tabLayout;
+    private int[] tabIcons = {
+            R.drawable.ic_tab_call,
+            R.drawable.ic_tab_favourite,
+            R.drawable.ic_tab_contacts};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +48,11 @@ public class AdminMainActivity extends AppCompatActivity
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(new MainFragmentAdapter(getSupportFragmentManager()));
+        setupViewPager(viewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.view_tabs);
+        tabLayout = (TabLayout) findViewById(R.id.view_tabs);
         tabLayout.setupWithViewPager(viewPager);
-
+        setupTabIcons();
         try {
             DataHelper.initialData(getApplicationContext());
         } catch (IOException e) {
@@ -75,5 +87,19 @@ public class AdminMainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        MainFragmentAdapter adapter = new MainFragmentAdapter(getSupportFragmentManager());
+        adapter.addFrag(new DeviceListFragment(), "Device");
+        adapter.addFrag(new LocationListFragment(), "Location");
+        adapter.addFrag(new ReportFragment(), "Report");
+        viewPager.setAdapter(adapter);
     }
 }
