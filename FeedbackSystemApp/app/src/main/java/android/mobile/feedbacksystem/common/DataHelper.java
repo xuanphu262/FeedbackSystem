@@ -57,7 +57,6 @@ public class DataHelper {
         String shortDescription = null;
         String longDescription = null;
         Date createDated = null;
-        LocationModel location = null;
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         reader.beginObject();
         while (reader.hasNext()) {
@@ -132,4 +131,7 @@ public class DataHelper {
         return new DeviceModel(id, deviceName, udid, createDated, locationId);
     }
 
+    public static void addLocation(LocationModel locationModel) {
+        locationList.add(locationModel);
+    }
 }

@@ -46,6 +46,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/btn_addLocation"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -56,11 +57,12 @@
         android:background="@drawable/bg_blue_radius"
         android:gravity="center"
         android:padding="6dp"
-        android:text="Update"
+        android:text="@string/create"
         android:textColor="@color/white"
         android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/btn_cancel"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
