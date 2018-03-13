@@ -76,6 +76,7 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
                         || mTvEndDay.getText().toString().isEmpty()
                         || mTvLocation.getText().toString().isEmpty()) {
                     Toast.makeText(getContext(), "Input data error!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 Intent reportResultIntent = new Intent(getContext(), ReportResultActivity.class);

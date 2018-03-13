@@ -5,14 +5,14 @@ package android.mobile.feedbacksystem.common;
  */
 
 public enum Feedback {
-    EXCELLENT(5), GOOD(4), AVERAGE(3), POOR(2), VERY_POOR(1);
-    int value;
+    EXCELLENT("EXCELLENT"), GOOD("GOOD"), AVERAGE("AVERAGE"), POOR("POOR"), VERY_POOR("VERY POOR");
+    String value;
 
-    Feedback(int value) {
+    Feedback(String value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 }
