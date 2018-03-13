@@ -2,6 +2,7 @@ package android.mobile.feedbacksystem.common;
 
 import android.content.Context;
 import android.mobile.feedbacksystem.common.model.DeviceModel;
+import android.mobile.feedbacksystem.common.model.FeedbackModel;
 import android.mobile.feedbacksystem.common.model.LocationModel;
 import android.util.JsonReader;
 
@@ -113,7 +114,6 @@ public class DataHelper {
         String udid = null;
         String locationId = null;
         Date createDated = null;
-        DeviceModel device = null;
 
         reader.beginObject();
         while (reader.hasNext()) {
@@ -150,5 +150,20 @@ public class DataHelper {
 
     public static String getNewDeviceID() {
         return (DataHelper.deviceModelList.size() + 1) + "";
+    }
+
+    public static boolean updateLocation(LocationModel location) {
+        //TODO update location
+        return false;
+    }
+
+    public static boolean updateDevice(DeviceModel device) {
+        //TODO update location
+        return false;
+    }
+
+    public static List<FeedbackModel> getFeedbackList(Date startDate, Date endDay, LocationModel location) {
+        //TODO get report Feedback
+        return null;
     }
 }
