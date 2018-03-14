@@ -47,4 +47,5 @@
     <string name="edit_device">Edit Device</string>
     <string name="update">Update</string>
     <string name="edit_location">Edit Location/Subject</string>
+    <string name="action_share">Share</string>
 </resources>
