@@ -102,7 +102,7 @@ public class AppUtils {
 
 
         // Create a path where we will place our List of objects on external storage
-        File file = new File(Environment.getExternalStorageDirectory(), fileName);
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
         FileOutputStream os = null;
 
         try {

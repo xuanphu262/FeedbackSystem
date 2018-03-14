@@ -48,4 +48,5 @@
     <string name="update">Update</string>
     <string name="edit_location">Edit Location/Subject</string>
     <string name="action_share">Share</string>
+    <string name="action_download">Download</string>
 </resources>

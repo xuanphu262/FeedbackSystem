@@ -122,7 +122,7 @@ public class ListResultFragment extends SectionCollectionFragment {
         try {
             boolean result = AppUtils.saveExcelFile(getActivity().getApplicationContext(), "Feedback.xlsx");
             if (result) {
-                Toast.makeText(getActivity(), "Export data successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Feedback.xlsx file was successfully saved in Download folder!", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getActivity(), "Export data failed!", Toast.LENGTH_SHORT).show();
             }
