@@ -34,10 +34,7 @@ public class AppUtils {
         return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 
-    public static boolean saveExcelFile(Context context, String fileName) {
-
-        boolean success = false;
-
+    public static File saveExcelFile(Context context, String fileName) {
         //New Workbook
         Workbook wb = new HSSFWorkbook();
 
@@ -102,18 +99,19 @@ public class AppUtils {
 
 
         // Create a path where we will place our List of objects on external storage
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
+        File savedFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
         FileOutputStream os = null;
 
         try {
-            os = new FileOutputStream(file);
+            os = new FileOutputStream(savedFile);
             wb.write(os);
-            Log.d("FileUtils", "Writing file" + file);
-            success = true;
+            Log.d("FileUtils", "Writing file" + savedFile);
         } catch (IOException e) {
-            Log.d("FileUtils", "Error writing " + file, e);
+            Log.d("FileUtils", "Error writing " + savedFile, e);
+            return null;
         } catch (Exception e) {
             Log.d("FileUtils", "Failed to save file", e);
+            return null;
         } finally {
             try {
                 if (null != os)
@@ -122,6 +120,6 @@ public class AppUtils {
             }
         }
 
-        return success;
+        return savedFile;
     }
 }
