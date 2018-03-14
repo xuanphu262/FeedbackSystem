@@ -21,8 +21,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
-
 public class AppUtils {
     public static int[] FeedbackResource = {
             R.drawable.ic_feedback_1,
@@ -75,7 +73,7 @@ public class AppUtils {
 
         List<FeedbackModel> list = DataHelper.feedbackList;
         int count = 1;
-        for (int i = 1; i<= list.size();i++){
+        for (int i = 1; i < list.size(); i++) {
 
             // Generate column headings
             row = sheet1.createRow(i);
@@ -96,7 +94,7 @@ public class AppUtils {
             c.setCellValue(list.get(i).getCreatedDate());
             c.setCellStyle(cs);
 
-            count ++;
+            count++;
         }
         sheet1.setColumnWidth(0, (15 * 500));
         sheet1.setColumnWidth(1, (15 * 500));
@@ -110,12 +108,12 @@ public class AppUtils {
         try {
             os = new FileOutputStream(file);
             wb.write(os);
-            Log.w("FileUtils", "Writing file" + file);
+            Log.d("FileUtils", "Writing file" + file);
             success = true;
         } catch (IOException e) {
-            Log.w("FileUtils", "Error writing " + file, e);
+            Log.d("FileUtils", "Error writing " + file, e);
         } catch (Exception e) {
-            Log.w("FileUtils", "Failed to save file", e);
+            Log.d("FileUtils", "Failed to save file", e);
         } finally {
             try {
                 if (null != os)

@@ -7,6 +7,7 @@ import android.mobile.feedbacksystem.R;
 import android.mobile.feedbacksystem.common.AppUtils;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,8 @@ import java.util.Map;
 import hoainguyen.lib.recyclerhelper.collection.SectionCollectionFragment;
 
 public class ListResultFragment extends SectionCollectionFragment {
-
     private static final int MULTIPLE_PERMISSIONS = 6969;
+    List<String> mPermissionsList = new ArrayList<>();
 
     @Override
     public View getRootLayout(LayoutInflater inflater, ViewGroup container) {
@@ -29,18 +30,22 @@ public class ListResultFragment extends SectionCollectionFragment {
         rootView.findViewById(R.id.btn_export).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= 23) {
-                    checkPermission();
+                if (haveToRequestPermission()) {
+                    Log.d("Report", "Request permission");
+                    requestPermissions(mPermissionsList.toArray(new String[mPermissionsList.size()]), MULTIPLE_PERMISSIONS);
                 } else {
-                    boolean result = AppUtils.saveExcelFile(getActivity().getApplicationContext(), "myExcel.xlsx");
-                    if(result) {
-                        Toast.makeText(getActivity().getApplicationContext(), "Export data successfully", Toast.LENGTH_SHORT).show();
-                    }
-
+                    createReportFile();
                 }
             }
         });
         return rootView;
+    }
+
+    private boolean haveToRequestPermission() {
+        if (Build.VERSION.SDK_INT < 23)
+            return false;
+
+        return checkPermission();
     }
 
     /**
@@ -51,13 +56,10 @@ public class ListResultFragment extends SectionCollectionFragment {
      * Note: this action will be invoke at all screens on Android version 6 and above.
      */
     @TargetApi(Build.VERSION_CODES.M)
-    private void checkPermission() {
-        final List<String> permissionsList = new ArrayList<>();
-        addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        addPermission(permissionsList, Manifest.permission.READ_EXTERNAL_STORAGE);
-        if (permissionsList.size() > 0) {
-            requestPermissions(permissionsList.toArray(new String[permissionsList.size()]), MULTIPLE_PERMISSIONS);
-        }
+    private boolean checkPermission() {
+        addPermission(mPermissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        addPermission(mPermissionsList, Manifest.permission.READ_EXTERNAL_STORAGE);
+        return (mPermissionsList.size() > 0);
     }
 
     /**
@@ -90,26 +92,21 @@ public class ListResultFragment extends SectionCollectionFragment {
      */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case MULTIPLE_PERMISSIONS:
-                Map<String, Integer> perms = new HashMap<>();
-                perms.put(Manifest.permission.READ_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
-                perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
+        if (requestCode == MULTIPLE_PERMISSIONS) {
+            Map<String, Integer> perms = new HashMap<>();
+            perms.put(Manifest.permission.READ_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
+            perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
 
-                for (int i = 0; i < permissions.length; i++) {
-                    perms.put(permissions[i], grantResults[i]);
-                }
+            for (int i = 0; i < permissions.length; i++) {
+                perms.put(permissions[i], grantResults[i]);
+            }
 
-                if (perms.get(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-                        && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(getActivity(), "App can't run without some permission", Toast.LENGTH_SHORT).show();
-                } else {
-                    boolean result = AppUtils.saveExcelFile(getActivity().getApplicationContext(), "myExcel.xlsx");
-                    if(result) {
-                        Toast.makeText(getActivity(), "Export data successfully", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                break;
+            if (perms.get(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                    && perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(getActivity(), "App can't run without some permission", Toast.LENGTH_SHORT).show();
+            } else {
+                createReportFile();
+            }
         }
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -118,5 +115,19 @@ public class ListResultFragment extends SectionCollectionFragment {
     @Override
     protected void onMakeAdapters() {
         mRecyclerView.appendAdapter(new FeedbackAdapter());
+    }
+
+    private void createReportFile() {
+        Log.d("Report", "Create report file!");
+        try {
+            boolean result = AppUtils.saveExcelFile(getActivity().getApplicationContext(), "Feedback.xlsx");
+            if (result) {
+                Toast.makeText(getActivity(), "Export data successfully", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getActivity(), "Export data failed!", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Export data failed!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
