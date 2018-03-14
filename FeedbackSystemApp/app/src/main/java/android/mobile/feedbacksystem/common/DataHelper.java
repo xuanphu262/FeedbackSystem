@@ -25,7 +25,7 @@ public class DataHelper {
 
         locationList = loadLocation(context);
         for (LocationModel locationModel : locationList) {
-            deviceList.add(new DeviceModel("1", "Tablet " + locationModel.getId(), "9774d56d682e549c", new Date(), locationModel.getId()));
+            deviceList.add(new DeviceModel("1", "Tablet " + locationModel.getId(), "9774d56d682e549c", new Date(), locationModel.getShortDescription()));
         }
         feedbackList = loadFeedback(context);
 

@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,7 +58,7 @@ public class ReportResultActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_share || item.getItemId() == R.id.action_download) {
+        if (item.getItemId() == R.id.action_email || item.getItemId() == R.id.action_download) {
             mActionId = item.getItemId();
             onSavedExportFile();
         }
@@ -148,10 +149,12 @@ public class ReportResultActivity extends AppCompatActivity {
     private void createReportFile() {
         Log.d("Report", "Create report file!");
         try {
-            File file = AppUtils.saveExcelFile(this.getApplicationContext(), "Feedback.xlsx");
+            String dateString = new Date().getTime() + "";
+            String fileName = "Feedback_Report_" + dateString + ".xls";
+            File file = AppUtils.saveExcelFile(this.getApplicationContext(), fileName);
             if (file != null) {
-                Toast.makeText(this, "Feedback.xlsx file was successfully saved in Download folder!", Toast.LENGTH_SHORT).show();
-                if (mActionId == R.id.action_share) {
+                Toast.makeText(this, fileName +" file was successfully saved in Download folder!", Toast.LENGTH_SHORT).show();
+                if (mActionId == R.id.action_email) {
                     onShareFile(file);
                 }
             } else {

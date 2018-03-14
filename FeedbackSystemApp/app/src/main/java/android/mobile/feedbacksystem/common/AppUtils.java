@@ -19,6 +19,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class AppUtils {
@@ -29,6 +30,7 @@ public class AppUtils {
             R.drawable.ic_feedback_4,
             R.drawable.ic_feedback_5
     };
+    private static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
     public static String getDeviceId(Context context) {
         return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -69,14 +71,13 @@ public class AppUtils {
         c.setCellStyle(cs);
 
         List<FeedbackModel> list = DataHelper.feedbackList;
-        int count = 1;
         for (int i = 1; i < list.size(); i++) {
 
             // Generate column headings
             row = sheet1.createRow(i);
 
             c = row.createCell(0);
-            c.setCellValue(count);
+            c.setCellValue(i);
             c.setCellStyle(cs);
 
             c = row.createCell(1);
@@ -88,15 +89,13 @@ public class AppUtils {
             c.setCellStyle(cs);
 
             c = row.createCell(3);
-            c.setCellValue(list.get(i).getCreatedDate());
+            c.setCellValue(dateFormat.format(list.get(i).getCreatedDate()));
             c.setCellStyle(cs);
-
-            count++;
         }
         sheet1.setColumnWidth(0, (15 * 500));
         sheet1.setColumnWidth(1, (15 * 500));
         sheet1.setColumnWidth(2, (15 * 500));
-
+        sheet1.setColumnWidth(3, (15 * 500));
 
         // Create a path where we will place our List of objects on external storage
         File savedFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
