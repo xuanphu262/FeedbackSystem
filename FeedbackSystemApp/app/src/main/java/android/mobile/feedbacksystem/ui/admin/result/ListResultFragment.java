@@ -33,6 +33,10 @@ public class ListResultFragment extends SectionCollectionFragment {
                     checkPermission();
                 } else {
                     boolean result = AppUtils.saveExcelFile(getActivity().getApplicationContext(), "myExcel.xlsx");
+                    if(result) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Export data successfully", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });
@@ -101,6 +105,9 @@ public class ListResultFragment extends SectionCollectionFragment {
                     Toast.makeText(getActivity(), "App can't run without some permission", Toast.LENGTH_SHORT).show();
                 } else {
                     boolean result = AppUtils.saveExcelFile(getActivity().getApplicationContext(), "myExcel.xlsx");
+                    if(result) {
+                        Toast.makeText(getActivity(), "Export data successfully", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
         }

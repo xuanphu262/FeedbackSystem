@@ -2,6 +2,7 @@ package android.mobile.feedbacksystem.common;
 
 import android.content.Context;
 import android.mobile.feedbacksystem.R;
+import android.mobile.feedbacksystem.common.model.FeedbackModel;
 import android.os.Environment;
 import android.provider.Settings;
 import android.util.Log;
@@ -18,6 +19,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -56,7 +58,7 @@ public class AppUtils {
         Row row = sheet1.createRow(0);
 
         c = row.createCell(0);
-        c.setCellValue("Item Number");
+        c.setCellValue("No.");
         c.setCellStyle(cs);
 
         c = row.createCell(1);
@@ -67,9 +69,39 @@ public class AppUtils {
         c.setCellValue("Location");
         c.setCellStyle(cs);
 
+        c = row.createCell(3);
+        c.setCellValue("CreatedDate");
+        c.setCellStyle(cs);
+
+        List<FeedbackModel> list = DataHelper.feedbackList;
+        int count = 1;
+        for (int i = 1; i<= list.size();i++){
+
+            // Generate column headings
+            row = sheet1.createRow(i);
+
+            c = row.createCell(0);
+            c.setCellValue(count);
+            c.setCellStyle(cs);
+
+            c = row.createCell(1);
+            c.setCellValue(list.get(i).getRating());
+            c.setCellStyle(cs);
+
+            c = row.createCell(2);
+            c.setCellValue(list.get(i).getLocationId());
+            c.setCellStyle(cs);
+
+            c = row.createCell(3);
+            c.setCellValue(list.get(i).getCreatedDate());
+            c.setCellStyle(cs);
+
+            count ++;
+        }
         sheet1.setColumnWidth(0, (15 * 500));
         sheet1.setColumnWidth(1, (15 * 500));
         sheet1.setColumnWidth(2, (15 * 500));
+
 
         // Create a path where we will place our List of objects on external storage
         File file = new File(Environment.getExternalStorageDirectory(), fileName);
